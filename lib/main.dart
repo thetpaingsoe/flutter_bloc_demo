@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_demo/features/basic_counter_with_bloc/ui/basic_counter_with_bloc_widget.dart';
-
-import 'features/basic_counter_with_bloc/bloc/basic_counter_with_bloc.dart';
+import 'features/basic_counter_with_bloc/ui/basic_counter_with_bloc_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Bloc Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 8, 1, 23)),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 8, 1, 23)),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Bloc Demo'),
@@ -34,10 +32,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
@@ -48,28 +44,32 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: 24,),
-            FilledButton(onPressed: () {
-              Navigator.push(
-                context, 
-                MaterialPageRoute(builder: 
-                  (context) => 
-                  BlocProvider(
-                    create: (context) => BasicCounterWithBloc(),
-                    child:
-                      const BasicCounterWithBlocWidget()
-                    )
-                )
-              );
-            }, child: Text('Basic Counter with Bloc')),
-            SizedBox(height: 24,),
-            FilledButton(onPressed: () {}, child: Text('Basic Counter with Cubit'), ),
-            SizedBox(height: 24,),
+            SizedBox(
+              height: 24,
+            ),
+            FilledButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const BasicCounterWithBlocPage()));
+                },
+                child: Text('Basic Counter with Bloc')),
+            SizedBox(
+              height: 24,
+            ),
+            FilledButton(
+              onPressed: () {},
+              child: Text('Basic Counter with Cubit'),
+            ),
+            SizedBox(
+              height: 24,
+            ),
             FilledButton(onPressed: () {}, child: Text('Bloc Widgets'))
-            
           ],
         ),
-      ),      
+      ),
     );
   }
 }
