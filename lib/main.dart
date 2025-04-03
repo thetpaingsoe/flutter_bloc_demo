@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_demo/features/basic_counter_with_cubit/ui/basic_counter_with_cubit_page.dart';
 import 'features/basic_counter_with_bloc/ui/basic_counter_with_bloc_page.dart';
 
 void main() {
@@ -60,7 +61,13 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 24,
             ),
             FilledButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const BasicCounterWithCubitPage()));
+              },
               child: Text('Basic Counter with Cubit'),
             ),
             SizedBox(
