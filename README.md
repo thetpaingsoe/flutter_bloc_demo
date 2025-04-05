@@ -12,7 +12,7 @@ Flutter SDK 3.29.2
 - [x] Basic Counter with Bloc
 - [x] Basic Counter with Cubit
 - [ ] Bloc Widgets
-    - [ ] BlocBuilder : buildWhen  
+    - [x] BlocBuilder : buildWhen  
         **Requirement**
         - It should build the UI only the counter value is even,
         - It should not build the UI when the value is odd.
