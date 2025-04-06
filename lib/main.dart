@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_demo/features/basic_counter_with_cubit/ui/basic_counter_with_cubit_page.dart';
+import 'package:flutter_bloc_demo/features/bloc_selector/ui/bloc_selector_page.dart';
 import 'features/basic_counter_with_bloc/ui/basic_counter_with_bloc_page.dart';
 import 'features/bloc_builder_build_when/ui/build_when_page.dart';
 
@@ -80,7 +81,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(
                           builder: (context) =>
                               const BuildWhenPage()));
-            }, child: Text('BlocBuilder : BuildWhen'))
+            }, child: Text('BlocBuilder : BuildWhen')),
+            SizedBox(
+              height: 24,
+            ),
+            FilledButton(onPressed: () {
+              Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const BlocSelectorPage()));
+            }, child: Text('BlocSelector'))
           ],
         ),
       ),

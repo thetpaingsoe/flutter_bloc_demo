@@ -16,7 +16,7 @@ Flutter SDK 3.29.2
         **Requirement**
         - It should build the UI only the counter value is even,
         - It should not build the UI when the value is odd.
-    - [ ] BlocSelector  
+    - [x] BlocSelector  
         **Requirement**
         - When user input the email, and format is wrong then build the error message 
     - [ ] BlocConsumer  

@@ -19,7 +19,7 @@ class BuildWhenScreen extends StatelessWidget {
       builder: (context, state) {
         return Center(
           child: Text(
-            'It will only build the UI for even number \n Counter: ${state.counter}', 
+            'It will only rebuild the UI for even number \n Counter: ${state.counter}', 
             textAlign: TextAlign.center,           
           ),
         );
