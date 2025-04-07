@@ -19,7 +19,7 @@ Flutter SDK 3.29.2
     - [x] BlocSelector  
         **Requirement**
         - When user input the email, and format is wrong then build the error message 
-    - [ ] BlocConsumer  
+    - [x] BlocConsumer  
         **Requirement**
         - When user click inform, show the toast
         - When user click +, - update the counter 
