@@ -23,7 +23,7 @@ Flutter SDK 3.29.2
         **Requirement**
         - When user click inform, show the toast
         - When user click +, - update the counter 
-    - [ ] Simple RepositoryProvider  
+    - [x] Simple RepositoryProvider  
         **Requirement**
         - Provide data from Repository to Bloc using RepositoryProvider 
 - [ ] Modeling States
