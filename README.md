@@ -27,7 +27,7 @@ Flutter SDK 3.29.2
         **Requirement**
         - Provide data from Repository to Bloc using RepositoryProvider 
 - [ ] Modeling States
-    - [ ] Enum States
+    - [/] Concrete Class & Enum States
     - [ ] Sealed Class States
     - [ ] Hybird States
 - [ ] Bloc Testing
