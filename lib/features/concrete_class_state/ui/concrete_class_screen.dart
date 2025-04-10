@@ -5,14 +5,24 @@ import '../bloc/concrete_class_bloc.dart';
 import '../bloc/concrete_class_event.dart';
 import '../bloc/concrete_class_state.dart';
 
-class ConcreteClassScreen extends StatelessWidget {
+class ConcreteClassScreen extends StatefulWidget {
   const ConcreteClassScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<ConcreteClassScreen> createState() => _ConcreteClassScreenState();
+}
 
-    BlocProvider.of<ConcreteClassBloc>(context)
-                  .add(ConcreteClassInitialEvent());
+class _ConcreteClassScreenState extends State<ConcreteClassScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    // Dispatch initial event ONCE when the screen loads
+    BlocProvider.of<ConcreteClassBloc>(context).add(ConcreteClassInitialEvent());
+  }
+
+  @override
+  Widget build(BuildContext context) {
 
     return Container(
       width: double.infinity,
