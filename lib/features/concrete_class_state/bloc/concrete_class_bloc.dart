@@ -8,6 +8,29 @@ class ConcreteClassBloc extends Bloc<ConcreteClassEvent, ConcreteClassState>{
   final DataListRepository dataListRepository;
   
   ConcreteClassBloc({required this.dataListRepository}) : super(ConcreteClassState()) {
+
+    on<ConcreteClassInitialEvent>((event, emit) async{
+      Status retrunStatus = Status.loading;
+
+      emit(ConcreteClassState(status: retrunStatus));
+
+      // Simulate a network call
+      List<String> dataList = await dataListRepository.getItems('');
+      String errorMessage = '';
+      if(dataList.isEmpty){
+        errorMessage = 'No data found';
+        retrunStatus = Status.error;
+      } else {
+        retrunStatus = Status.loaded;
+      }
+      
+      emit(ConcreteClassState(
+        status: retrunStatus, 
+        dataList: dataList, 
+        keyword: '', 
+        errorMessage: errorMessage));
+    });
+    
     on<ConcreteClassFetchDataEvent>((event, emit) async {
       Status retrunStatus = Status.loading;
 

@@ -10,6 +10,10 @@ class ConcreteClassScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    BlocProvider.of<ConcreteClassBloc>(context)
+                  .add(ConcreteClassInitialEvent());
+
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.all(16),
@@ -18,23 +22,46 @@ class ConcreteClassScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          FilledButton(
-            onPressed: () {
+          // Search TextField with a search icon
+          TextField(
+            decoration: InputDecoration(
+              labelText: 'Search',
+              prefixIcon: const Icon(Icons.search),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
+            ),
+            onChanged: (value) {
               // Trigger the event to fetch data
               BlocProvider.of<ConcreteClassBloc>(context)
-                  .add(ConcreteClassFetchDataEvent(keyword: ''));
+                  .add(ConcreteClassFetchDataEvent(keyword: value));
             },
-            child: const Text("Fetch Data"),
           ),
+          
           const SizedBox(height: 16),
           BlocBuilder<ConcreteClassBloc, ConcreteClassState>(
             builder: (context, state) {
               if (state.status == Status.loading) {
                 return const CircularProgressIndicator();
-              } else if (state.status == Status.loaded) {
-                return Text("Got Data: ${state.dataList.length}");
-              } else {
+              } else if (state.status == Status.error) {
                 return const Text("No data");
+              } else {
+                return Expanded(
+                  child: ListView.builder(
+                    itemCount: state.dataList.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        child: ListTile(
+                          title: Text(state.dataList[index]),
+                        ),
+                      );
+                    },
+                  ),
+                );
+                
               }
             },
           ),
