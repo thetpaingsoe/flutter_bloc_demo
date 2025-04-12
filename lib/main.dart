@@ -7,6 +7,7 @@ import 'package:flutter_bloc_demo/features/repository_provider/ui/repository_pro
 import 'package:flutter_bloc_demo/features/sealed_class_state/ui/sealed_class_page.dart';
 import 'features/basic_counter_with_bloc/ui/basic_counter_with_bloc_page.dart';
 import 'features/bloc_builder_build_when/ui/build_when_page.dart';
+import 'features/hybird_sealed_class_state/ui/hybird_sealed_class_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -136,6 +137,16 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) =>
                               const SealedClassPage()));
             }, child: Text('States : Sealed Class State')),
+            SizedBox(
+              height: 24,
+            ),
+            FilledButton(onPressed: () {
+              Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const HybirdSealedClassPage()));
+            }, child: Text('States : Hybird Sealed Class State')),
           ],
         ),
       ),
