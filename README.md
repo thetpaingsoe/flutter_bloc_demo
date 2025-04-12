@@ -11,7 +11,7 @@ Flutter SDK 3.29.2
 ## Action Items
 - [x] Basic Counter with Bloc
 - [x] Basic Counter with Cubit
-- [ ] Bloc Widgets
+- [x] Bloc Widgets
     - [x] BlocBuilder : buildWhen  
         **Requirement**
         - It should build the UI only the counter value is even,
@@ -26,8 +26,8 @@ Flutter SDK 3.29.2
     - [x] Simple RepositoryProvider  
         **Requirement**
         - Provide data from Repository to Bloc using RepositoryProvider 
-- [ ] Modeling States
-    - [/] Concrete Class & Enum States
-    - [ ] Sealed Class States
-    - [ ] Hybird States
+- [x] Modeling States
+    - [x] Concrete Class & Enum States
+    - [x] Sealed Class States
+    - [x] Hybird States
 - [ ] Bloc Testing
