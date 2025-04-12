@@ -22,27 +22,3 @@ final class SealedClassSearchState extends SealedClassSuccessState {
   final String keyword;
   SealedClassSearchState({required this.keyword, required super.dataList}) : super();
 }
-
-
-
-// enum Status {
-//   initial,
-//   loading,
-//   loaded,
-//   error,
-// }
-
-// class SealedClassState {
-  
-//   final Status status;
-//   final List<String> dataList;
-//   final String errorMessage;
-//   final String keyword;
-
-//   const SealedClassState({
-//     this.status = Status.initial,
-//     this.dataList = const [],
-//     this.errorMessage = '',
-//     this.keyword = '',
-//   });
-// }
