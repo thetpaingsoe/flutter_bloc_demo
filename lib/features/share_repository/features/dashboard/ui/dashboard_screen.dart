@@ -46,7 +46,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
               if (state is CategoryLoadingState) {
                 return const Center(child: CircularProgressIndicator());
               } else if (state is CategorySuccessState) {
-                // i want to create horizontal listview
                 return SizedBox(
                   height: 100,
                   width: double.infinity,
