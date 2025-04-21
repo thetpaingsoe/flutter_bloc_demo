@@ -5,6 +5,7 @@ import 'package:flutter_bloc_demo/features/bloc_selector/ui/bloc_selector_page.d
 import 'package:flutter_bloc_demo/features/concrete_class_state/ui/concrete_class_page.dart';
 import 'package:flutter_bloc_demo/features/repository_provider/ui/repository_provider_page.dart';
 import 'package:flutter_bloc_demo/features/sealed_class_state/ui/sealed_class_page.dart';
+import 'package:flutter_bloc_demo/features/share_repository/features/dashboard/ui/dashboard_page.dart';
 import 'features/basic_counter_with_bloc/ui/basic_counter_with_bloc_page.dart';
 import 'features/bloc_builder_build_when/ui/build_when_page.dart';
 import 'features/hybird_sealed_class_state/ui/hybird_sealed_class_page.dart';
@@ -147,6 +148,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) =>
                               const HybirdSealedClassPage()));
             }, child: Text('States : Hybird Sealed Class State')),
+            const SizedBox(height : 24),
+            FilledButton(onPressed: (){
+              Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const ShareRepositoryPage()));
+              }, 
+              child: const Text('Shared Repository') )
           ],
         ),
       ),
