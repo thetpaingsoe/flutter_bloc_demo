@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_demo/features/share_repository/features/cateogry/ui/category_list_page.dart';
 import 'package:flutter_bloc_demo/features/share_repository/features/dashboard/bloc/category/category_bloc.dart';
 import 'package:flutter_bloc_demo/features/share_repository/features/dashboard/bloc/category/category_event.dart';
 import 'package:flutter_bloc_demo/features/share_repository/features/dashboard/bloc/category/category_state.dart';
+import 'package:flutter_bloc_demo/features/share_repository/repository/category_repository.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -21,6 +23,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final categoryRepository = context.read<CategoryRepository>();
+    
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -37,7 +41,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         .textTheme
                         .bodyMedium
                         ?.copyWith(fontWeight: FontWeight.bold)),
-                TextButton(onPressed: () {}, child: Text("VIEW ALL"))
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CategoryListPage(
+                                categoryRepository: categoryRepository),
+                          ));
+                    },
+                    child: Text("VIEW ALL"))
               ],
             ),
           ),
