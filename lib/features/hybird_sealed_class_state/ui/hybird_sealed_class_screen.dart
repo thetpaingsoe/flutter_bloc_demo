@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/hybird_sealed_class_bloc.dart';
 import '../bloc/hybird_sealed_class_event.dart';
-import '../bloc/bybird_sealed_class_state.dart';
+import '../bloc/hybird_sealed_class_state.dart';
 
 class HybirdSealedClassScreen extends StatefulWidget {
   const HybirdSealedClassScreen({super.key});

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../repository/data_list_repository.dart';
 import 'hybird_sealed_class_event.dart';
-import 'bybird_sealed_class_state.dart';
+import 'hybird_sealed_class_state.dart';
 
 class HybirdSealedClassBloc extends Bloc<HybirdSealedClassEvent, HybirdSealedClassState>{
   
