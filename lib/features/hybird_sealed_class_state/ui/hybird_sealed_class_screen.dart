@@ -34,7 +34,8 @@ class _HybirdSealedClassScreenState extends State<HybirdSealedClassScreen> {
         children: [
           // Search TextField with a search icon
           TextField(
-            decoration: InputDecoration(
+            key: const Key('seach_text_field'),
+            decoration: InputDecoration(              
               labelText: 'Search',
               prefixIcon: const Icon(Icons.search),
               border: OutlineInputBorder(
