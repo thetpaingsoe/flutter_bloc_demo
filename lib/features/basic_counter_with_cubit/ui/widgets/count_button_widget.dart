@@ -13,6 +13,7 @@ class CountButtonWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           FloatingActionButton(
+            key: const Key('increment-button'),
             heroTag: "increment",
             onPressed: () {
               BlocProvider.of<BasicCounterWithCubit>(context).increment();
@@ -24,6 +25,7 @@ class CountButtonWidget extends StatelessWidget {
             height: 16,
           ),
           FloatingActionButton(
+            key: const Key('decrement-button'),
             heroTag: "decrement",
             onPressed: () {
               BlocProvider.of<BasicCounterWithCubit>(context).decrement();
