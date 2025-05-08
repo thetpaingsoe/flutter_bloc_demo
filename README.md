@@ -9,7 +9,7 @@ Flutter SDK 3.29.2
 - And Run the project
 
 ## 🧪 Unit Test & Widget Test
-For the testing we used test, bloc_test, and mockito
+For the testing I used test, bloc_test, and mockito
 - In-order to run the test you can run using `flutter test` to run all the test cases.
 - If you want to run individual test case, please add the file path behind the command `flutter test {full_path}`
 - All our test cases will be under `test/`
