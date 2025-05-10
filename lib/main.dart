@@ -101,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Center(
                 child: FilledButtonActionWidget(
                   title: uiList[index]['name'].toString(),
-                  action: () => const BasicCounterWithBlocPage(),
+                  action: () => uiList[index]['action'],
                 ),
               ),
             );
