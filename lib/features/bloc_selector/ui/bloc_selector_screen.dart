@@ -23,6 +23,7 @@ class BlocSelectorScreen extends StatelessWidget {
             Row(mainAxisSize: MainAxisSize.max, children: [
               Expanded(
                 child: TextField(
+                  key: const Key('email-input'),
                   controller: emailController,
                   decoration: const InputDecoration(
                     labelText: 'Email',
@@ -32,6 +33,7 @@ class BlocSelectorScreen extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               FilledButton(
+                  key: const Key('submit'),
                   onPressed: () {
                     BlocProvider.of<BlocSelectorBloc>(context)
                         .add(BlocSelectorEmailCheckedEvent(emailController.text));

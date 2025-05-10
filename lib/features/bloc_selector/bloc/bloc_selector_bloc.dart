@@ -10,7 +10,7 @@ class BlocSelectorBloc extends Bloc<BlocSelectorEvent, BlocSelectorState> {
       // check if email is valid
       _emailValidation(event.email)
           ? emit(BlocSelectorState(email: event.email, emailError: ""))
-          : emit(BlocSelectorState(email: event.email, emailError: "Invalid Email"));
+          : emit(BlocSelectorState(email: "", emailError: "Invalid Email"));
     });
   }
 
