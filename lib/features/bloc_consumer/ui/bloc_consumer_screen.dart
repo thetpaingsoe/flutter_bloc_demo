@@ -14,7 +14,7 @@ class BlocConsumerScreen extends StatelessWidget {
         if (state is BlocConsumerDumpState) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Counter: ${state.counter}'),
+              content: Text('Current Count is : ${state.counter}'),
               duration: const Duration(seconds: 1),
             ),
           );

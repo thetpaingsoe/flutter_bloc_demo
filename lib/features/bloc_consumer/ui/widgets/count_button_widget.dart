@@ -14,6 +14,7 @@ class CountButtonWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           FloatingActionButton(
+            key: const Key('increment'),
             heroTag: "increment",
             onPressed: () {
               BlocProvider.of<BlocConsumerBloc>(context)
@@ -26,6 +27,7 @@ class CountButtonWidget extends StatelessWidget {
             height: 16,
           ),
           FloatingActionButton(
+            key: const Key('decrement'),
             heroTag: "decrement",
             onPressed: () {
               BlocProvider.of<BlocConsumerBloc>(context)
@@ -38,7 +40,8 @@ class CountButtonWidget extends StatelessWidget {
             height: 16,
           ),
           FloatingActionButton(
-            heroTag: "??",
+            key: const Key('show-msg'),
+            heroTag: "show-msg",
             onPressed: () {
               BlocProvider.of<BlocConsumerBloc>(context)
                   .add(BlocConsumerDumpEvent());
